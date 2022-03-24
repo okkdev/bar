@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "mkdir -p dist && rm -rf dist/* && cp -R src/. dist/ && yarn tailwindcss -i ./src/style.css -o ./dist/style.css --minify",
+    "link": "ln -s (pwd)/dist ~/Library/Application\\ Support/Übersicht/widgets/bar\""
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}

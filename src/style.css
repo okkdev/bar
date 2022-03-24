@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "FantasqueSansMono Nerd Font", "JetBrainsMono Nerd Font", Courier,
+    monospace;
+}
+
+.gate {
+  margin-top: 5px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.blob {
+  @apply px-3 py-1 text-black rounded-full shadow backdrop-blur dark:text-white bg-rose-50 dark:bg-zinc-800 bg-opacity-90;
+}

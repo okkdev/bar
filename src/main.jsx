@@ -35,13 +35,29 @@ const updateState = (event, previousState) => {
 }
 
 const render = ({ output }) => {
+  const notch = screen.width == 1512
+  let spotify
+  if (output.spotify) {
+    if (notch) {
+      spotify = (
+        <div className="flex max-w-xs gap-2 blob">
+          ♫
+          <marquee behavior="scroll" scrollamount="4" direction="left">
+            {output.spotify}
+          </marquee>
+        </div>
+      )
+    } else {
+      spotify = <div className="blob">♫ {output.spotify}</div>
+    }
+  }
   return (
     <div className="w-screen">
       <link href="bar/style.css" type="text/css" rel="stylesheet" />
       <div className="flex justify-between gate">
         <div></div>
         <div className="flex gap-2">
-          {output.spotify ? <div className="blob">♫ {output.spotify}</div> : ""}
+          {spotify}
           <div className="blob">→ {output.date}</div>
           <div className="blob">☀ {output.time}</div>
           <div className="blob">{output.battery}</div>
